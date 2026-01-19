@@ -1,15 +1,24 @@
-import React from 'react'
+import React, {useEffect}from 'react'
 import { furnitureItems } from '../utilities/data'
 import Item from '../components/Item'
 import Room from '../components/Room'
 import Review from '../components/Review'
 import {reviews, roomDecor } from "../utilities/data";
+import "aos/dist/aos.css";
+import Aos from 'aos'
 
 const Home = () => {
+
+  useEffect(() => {
+Aos.init({
+      duration: 500,
+      easing: "ease-in-out",
+    });
+}, [])
   return (
         <div>
           <section className="mt-20 space-x-10 flex justify-between">
-            <div className="space-y-5">
+            <div className="space-y-5" data-aos="fade-right">
               <h3 className="font-bold text-3xl">Welcome to Furniture world</h3>
               <p className="text-sm">Discover our mouth-watering dishes</p>
               <input
@@ -30,16 +39,17 @@ const Home = () => {
               src="https://images.unsplash.com/photo-1670222061552-c273834aee0c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
               className="rounded-xl h-80 w-120"
+              data-aos="fade-left"
             />
           </section>
-          <section className="text-center bg-blue-300 w-110 p-7 rounded-2xl bg-linear-to-r from-white to-[#E3ECE9] absolute top-110">
+          <section className="text-center bg-blue-300 w-110 p-7 rounded-2xl bg-linear-to-r from-white to-[#E3ECE9] absolute top-110" data-aos="fade-up">
             <h4 className="font-bold">Design your new us with us</h4>
             <p>
               From modern minimalism to warm, layered elegance, our designs are
               thoughtfully tailored to reflect your lifestyle and vision.
             </p>
           </section>
-          <section className="bg-[#C0D5CE] mt-50 px-20 py-8 rounded-2xl flex space-x-20">
+          <section className="bg-[#C0D5CE] mt-50 px-20 py-8 rounded-2xl flex space-x-20" data-aos="fade-up">
             {furnitureItems.map((item, index) => (
               <Item key={index} {...item} />
             ))}
@@ -51,7 +61,7 @@ const Home = () => {
           </section>
           <section className="mt-30 text-center w-245">
             <h1 className="text-2xl font-bold mb-10">Our Reviews</h1>
-            <div className="flex space-x-3 pl-20 pr-5">
+            <div className="flex space-x-3 pl-20 pr-5" data-aos="zoom-in">
               {reviews.map((review, index) =>
                 index === 1 ? (
                   <Review
@@ -65,7 +75,7 @@ const Home = () => {
               )}
             </div>
           </section>
-          <section className="w-220 ml-20 bg-[#C0D5CE] h-60 mt-20 rounded-3xl flex justify-evenly space-x-10 items-center">
+          <section className="w-220 ml-20 bg-[#C0D5CE] h-60 mt-20 rounded-3xl flex justify-evenly space-x-10 items-center" data-aos="zoom-in">
             <div className="w-60 space-y-4">
               <h1 className="text-2xl font-bold">
                 Get 40% OFF this Eid on all products
@@ -80,7 +90,7 @@ const Home = () => {
               className="h-50"
             />
           </section>
-          <section className="mt-35 flex items-center space-x-30">
+          <section className="mt-35 flex items-center space-x-30" data-aos="fade-up">
             <div className="bg-[#BCD1CA] rounded-2xl w-fit relative ml-11">
               <img
                 src="https://images.unsplash.com/photo-1598300056393-4aac492f4344?q=80&w=834&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
