@@ -10,8 +10,7 @@ function App() {
       <div className="p-5 bg-white relative">
         <Nav />
         <Routes>
-          <Route path='/' element ={<Home />}/>
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Home />} />
         </Routes>
         <Footer />
       </div>
