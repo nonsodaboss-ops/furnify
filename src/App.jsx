@@ -11,6 +11,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path='/' element ={<Home />}/>
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>
